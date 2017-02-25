@@ -1,0 +1,13 @@
+<div class="list">
+    <app-product 
+            *ngFor="let product of products"
+             class="item" 
+             [product]="product"
+             (click)="onSelect(product)"
+             >
+    </app-product>
+
+</div>
+
+<div class="edit">
+</div>

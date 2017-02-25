@@ -1,0 +1,56 @@
+<div class="container">
+  <div [hidden]="submitted">
+
+    <h1> Formularz </h1>
+    <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+      <div>
+        <label for="name">Nazwa</label>
+        <input [(ngModel)]="product.name" required type="text" name="name" #name="ngModel">
+        <div class="error" [hidden]="name.valid || name.untouched">INVALID</div>
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <input [(ngModel)]="product.description" type="text" name="description">
+      </div>
+      <div>
+        <label for="category">Kategoria</label>
+        <select [(ngModel)]="product.category" name="category" id="">
+          <option value="{{category}}" *ngFor="let category of categories">{{category}}</option>
+        </select>
+      </div>
+
+      <div>
+        aaa: {{productForm.valid}}
+        <button type="submit" [disabled]="productForm.valid">Zapisz</button>
+        <button (click)="productForm.reset()">Anuluj</button>
+      </div>
+    </form>
+
+  </div>
+  <!--<div [hidden]="submitted">
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" (click)="heroForm.reset()">New Hero</button>
+      <i>with</i> reset
+    </form>
+  </div>-->
+
+  <div [hidden]="!submitted">
+    <h2>Utworzony produkt:</h2>
+    <div >
+      <div>Nazwa: {{ product.name }}</div>
+    </div>
+    <div>
+      <div>Opis: {{ product.description }}</div>
+    </div>
+    <div>
+      <div>Kategoria: {{ product.category }}</div>
+    </div>
+    <br>
+    <button (click)="submitted = false" class="btn btn-primary">Edit</button>
+  </div>
+</div>

@@ -5,15 +5,17 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from '@angular/material';
-import { UserComponent } from './user/user/user.component';
-import { UserListComponent } from './user/user-list/user-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProductComponent } from './product/product/product.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    UserListComponent
+    ProductComponent,
+    ProductListComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,

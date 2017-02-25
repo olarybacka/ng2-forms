@@ -1,11 +1,13 @@
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { UserListComponent } from './user/user-list/user-list.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full'},
-  { path: 'user-list', component: UserListComponent},
+  { path: 'product-list', component: ProductListComponent},
+  { path: 'product-edit', component: ProductEditComponent},
 
 ];
 
